@@ -1,4 +1,4 @@
- #creation of Users table
+ --creation of Users table
  
  create table users(
     user_id integer AUTO_INCREMENT PRIMARY KEY,
@@ -8,7 +8,7 @@
     registration_date date NOT NULL
 );
 
-#creation of Events table
+--creation of Events table
 CREATE TABLE Events (
     event_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(200) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE Events (
     FOREIGN KEY (organizer_id) REFERENCES Users(user_id)
 );
 
-#creation of Sessions table
+--creation of Sessions table
 CREATE TABLE Sessions (
     session_id INT AUTO_INCREMENT PRIMARY KEY,
     event_id INT,
@@ -32,7 +32,7 @@ CREATE TABLE Sessions (
     FOREIGN KEY (event_id) REFERENCES Events(event_id)
 );
 
-#creation of Registrations table
+--creation of Registrations table
 CREATE TABLE Registrations (
     registration_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -42,7 +42,7 @@ CREATE TABLE Registrations (
     FOREIGN KEY (event_id) REFERENCES Events(event_id)
 );
 
-#creation of Feedback table
+--creation of Feedback table
 CREATE TABLE Feedback (
     feedback_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
@@ -54,11 +54,7 @@ CREATE TABLE Feedback (
     FOREIGN KEY (event_id) REFERENCES Events(event_id)
 );
 
-
-
-
-
-#creation of Resources table
+--creation of Resources table
 CREATE TABLE Resources (
     resource_id INT AUTO_INCREMENT PRIMARY KEY,
     event_id INT,
